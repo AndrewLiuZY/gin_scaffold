@@ -22,3 +22,5 @@ require (
 )
 
 replace github.com/gin-contrib/sse v0.1.0 => github.com/e421083458/sse v0.1.1
+
+go 1.13
