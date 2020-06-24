@@ -21,7 +21,6 @@ func (f *User) TableName() string {
 	return "user"
 }
 
-
 func (f *User) Del(idSlice []string) error {
 	err := public.GormPool.Where("id in (?)", idSlice).Delete(&User{}).Error
 	if err != nil {
@@ -29,7 +28,6 @@ func (f *User) Del(idSlice []string) error {
 	}
 	return nil
 }
-
 
 func (f *User) Find(id int64) (*User, error) {
 	var user User
@@ -62,7 +60,7 @@ func (f *User) PageList(name string, pageNo int, pageSize int) ([]*User, int64, 
 }
 
 func (f *User) Save() error {
-	if err:=public.GormPool.Save(f).Error;err!=nil{
+	if err := public.GormPool.Save(f).Error; err != nil {
 		return err
 	}
 	return nil
